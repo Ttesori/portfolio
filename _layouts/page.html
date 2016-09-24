@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Home Page</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" src="http://normalize-css.googlecode.com/svn/trunk/normalize.css" />
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Open+Sans:400,400 i,700" rel="stylesheet">
+		<link href="https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css" rel="stylesheet">
+		<link rel="stylesheet" href="/css/tesori.css">
+	</head>
+	<body class="{{ page.body-class }}">
+		<header role="banner">
+			<h1>Tesori Design</h1>
+			<nav role="navigation">
+				<ul>
+				{% include navigation.html %}
+				</ul>
+			</nav>
+			<aside id="hero">
+				<div>
+					<h2>{{ page.hero-headline }}</h2>
+					{% if page.hero-subhead %} <h3>{{ page.hero-subhead }}</h3> {% endif %}
+					<p>{{ page.hero-body }}</p>
+				</div>
+			</aside>
+		</header>
+			{{ content }}
+		<section>
+			<aside class="testimonial">
+				<blockquote>
+					<q>Toni is the best designer I've worked with. I often worry about freelancers flaking out, but she stays on top of every project until the end. Toni offers great work at a reasonable price and always delivers on time &mdash; I can't ask for anything more!</q>
+					<cite>&mdash; Michael Huffman, App Developer</cite>
+				</blockquote>
+			</aside>
+
+			<aside class="social">
+				<h1>Let's Connect</h1>
+				<ul>
+					{% include social.html %}
+				</ul>
+			</aside>
+		</section>
+
+		<footer>
+			<p>&copy; 2016 Tesori Design. <em>All Rights Reserved.</em></p>
+		</footer>
+
+	</body>
+</html>

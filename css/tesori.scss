@@ -1,0 +1,528 @@
+/* 
+ * Tesori Design by Toni Tesori
+ * 9.29.2016 */
+
+/* Felt That font from MyFonts */
+@import url("http://hello.myfonts.net/count/32214f");
+
+@font-face {
+	font-family: 'FeltThat';
+	src: url('/fonts/32214F_0_0.eot');
+	src: url('/fonts/32214F_0_0.eot?#iefix') format('embedded-opentype'),
+	url('/fonts/32214F_0_0.woff2') format('woff2'),
+	url('/fonts/32214F_0_0.woff') format('woff'),
+	url('/fonts/32214F_0_0.ttf') format('truetype');
+}
+
+// Color Variables
+$primary: #4ba39c; // Teal 
+$secondary: #96d673; // Lime
+$neutral-dark: #635C51;
+$neutral-light: #F0EFEE;
+
+$primary-lighter: #a5d1cd;
+$primary-darker: #287670;
+$secondary-lighter: #caeab9;
+$secondary-darker: #6ab044;
+
+$neutral-darker: #433e37;
+$neutral-mid: #8a857d;
+$neutral-midlight: #d8d6d3;
+
+// Font Variables
+$font-special: FeltThat, Georgia, cursive;
+$font-titles: 'Roboto Slab', Georgia, serif;
+$font-body: 'Open Sans', Helvetica, sans-serif;
+
+// Mixins
+
+@mixin border-dotted($color, $width) {
+	content: '';
+	display:block;
+	width:$width;
+	height:.13rem;
+	background:$color url(/img/border-dotted-trans.svg) repeat-x;
+	background-size:.37rem auto;
+}
+
+@mixin border-dotted-after($color, $width) {
+	&:after {
+		@include border-dotted($color, $width);
+		margin:.25rem auto 1rem;
+	 }
+}
+
+@mixin border-dotted-before($color, $width) {
+	&:before {
+		@include border-dotted($color, $width);
+		margin:1rem auto .25rem;
+	 }
+}
+
+@mixin border-diagonal($color) {
+	content: '';
+    display:block;
+    height:1rem;
+   	background: repeating-linear-gradient(-45deg, $color 0px, $color 2px, white 3px, white 8px, $color 9px);
+   	margin-bottom:1.5rem;
+}
+@mixin border-diag($color1,$color2) {
+	content: '';
+    display:block;
+    height:1rem;
+   	background: repeating-linear-gradient(-45deg, $color1 0px, $color1 2px, $color2 3px, $color2 8px, $color1 9px);
+   	margin-bottom:1.5rem;
+}
+
+@mixin bkg-sketchy($color) {
+	background:url(http://simply-imperfect.com/img/title-sketchy-#{$color}.svg) no-repeat;
+	background-size:cover;
+	font-family:'Roboto Slab';
+}
+@mixin bkg-sketchy-small($color) {
+	background:url(http://simply-imperfect.com/img/title-sketchy-#{$color}-small.svg) no-repeat;
+	background-size:100% auto;
+	font-family:'Roboto Slab';
+}
+
+/* Universal Styles */
+
+* {
+	box-sizing:border-box
+}
+
+:root {
+	font-size:16px;
+}
+
+ @media screen and (min-width: 480px) {
+ 	:root {
+ 		font-size: 20px;
+ 	}
+ }
+
+body {
+	font-family:$font-body;
+	margin:0;
+	color: $neutral-dark;
+}
+
+h1, h2, h3, h4 {
+	font-weight:normal;
+}
+
+/* Header */
+
+header {
+
+	h1 {
+		height:7.5rem;
+		line-height:7.5rem; // Fix for after border
+		width:25rem;
+		max-width:100%;
+		margin:0 auto;
+		text-indent:-999em;
+		background:url(/img/logo.png) no-repeat top center;
+		background-size: contain;
+		
+		@include border-dotted-after($secondary,75%)
+	}
+
+	nav {
+		padding-top:1rem;
+
+		ul {
+			list-style:none;
+			margin:0 auto;
+			padding:0;
+			text-align:center;
+			max-width:80%;
+		}
+
+		li {
+			display:inline-block;
+			padding:.5em .75em;
+
+			a {
+				font-family: $font-titles;
+				color: $neutral-dark;
+				text-decoration:none;
+				transition: all 0.2s ease-in-out;
+				line-height:1.6rem;
+
+				&:hover {
+					color:$primary;
+					border-bottom:2px solid $secondary;
+				}
+			}
+		}
+		@media screen and (max-width: 750px) {
+ 			li {
+ 				width:45%;
+ 			}
+ 			li:last-of-type {
+ 				width:100%;
+ 				padding-right:45%;
+ 			}
+ 		}
+	}
+
+	aside {
+		background-image: radial-gradient(rgba(255,255,255,0) 75%, rgba(255,255,255,.75) 100%),url(/img/paper.png);
+		margin:.5rem auto;
+
+
+		h2, h3 {
+			font-family: $font-special
+		}
+
+		h2 {
+			font-size: 3rem;
+			text-shadow: 2px 2px 5px $primary-darker;
+			color: white;
+			margin:0 26.5% .1rem .5rem;
+			padding-top:.3rem;
+		}
+
+		h2:before {
+			content: "";
+			position:absolute;
+			top:0;
+			right:0;
+			width: 24.75%;
+			min-height:100%;
+			background:url(/img/me.jpg) center center no-repeat;
+			background-size:cover;
+		}
+
+		h3 {
+			font-size:1.3em;
+			color: $primary;
+			text-shadow: 1px 1px 3px $primary-lighter;
+			@include bkg-sketchy-small(white);
+			padding:0 .75rem;
+			width:9rem;
+			margin:0 0 .25rem 2rem;
+			font-style:italic;
+			letter-spacing:1px;
+		}
+
+		p {
+			font-style: italic;
+			color:white;
+			font-size:1.1em;
+			line-height: 1.5em;
+			font-family: $font-titles;
+			margin:0 26.5% .25rem 0;
+			padding:.5rem 0 1.5rem 2.5rem;
+			text-shadow: 1px 1px 3px $primary-darker;
+		}
+
+		div {
+			background-color: $primary-lighter;
+			max-width:1000px;
+			margin:0 auto;
+			padding:1em;
+			background-image: radial-gradient(ellipse at bottom center, rgba($primary-lighter,0.9), rgba($primary,0.95)),
+			url(/img/hero-home.jpg);
+			background-size:cover;
+			background-position:center;
+			position:relative;
+			box-shadow:8px 0 15px -10px $neutral-mid, -8px 0 15px -10px $neutral-mid;
+		}
+
+		@media screen and (min-width: 750px) {
+			div {
+				height:15rem;
+
+			h2 {
+				padding-top:1rem;
+				}
+			}
+		}
+	}
+	
+}
+header:before {
+	@include border-diagonal($neutral-light)
+	border-top:.25em solid $secondary;
+   	padding-top:.2rem;
+	background-clip:content-box;
+}
+
+
+/* Main */
+
+main {
+	max-width:1000px;
+	margin:0 auto;
+	padding:2rem 1rem;
+	display:flex;
+
+	section {
+		flex-grow:1;
+		text-align:center;
+		padding:0px 1rem;
+
+		h1 {
+			font-family: $font-special;
+			font-size:3.5em;
+			line-height:.9em;
+			margin:0;
+			text-transform: lowercase;
+			padding-top: 4.25rem;
+			background-size:auto 4.75rem;
+			background-position: top center;
+			background-repeat:no-repeat;
+
+			@include border-dotted-after($secondary-lighter,70%)
+
+			span {
+				display:none;
+			}
+
+		}
+
+		@media screen and (min-width: 900px) {
+ 			h1 span {	display: inline;	
+ 			}
+		}
+
+
+		p {
+			font-size:.8rem;
+
+		}
+
+		&:nth-of-type(1) h1 {
+			background-image:url(/img/icon_portfolio.svg);
+		}
+
+		&:nth-child(2) h1 {
+			background-image:url(/img/icon_book.svg);
+			background-size:auto 4.5rem;
+		}
+		&:nth-of-type(3) h1 {
+			background-image:url(/img/icon_talk.svg);
+		}
+	}
+}
+@media screen and (max-width: 700px) {
+ 	main {	flex-direction: column;	}
+ 	main section {margin-bottom:1em;}
+ 	main section p {
+ 		padding:0 2em;
+ 		margin-top:.2em;
+ 	}
+ 	main section h1:after {
+ 		margin-bottom:.5rem;
+ 	}
+}
+
+
+aside.testimonial {
+	background-image: radial-gradient(rgba(255,255,255,0) 75%, rgba(255,255,255,.75) 100%),url(/img/paper.png);
+	text-align:center;
+	padding-bottom:1rem;
+
+	&:before {
+		@include border-diagonal($neutral-light)
+		border-bottom:.2rem solid white;
+		margin-bottom:1rem;
+	}
+
+	blockquote {
+		max-width:1000px;
+		margin:0 auto;
+		padding:2rem 0;
+		text-shadow:1px 1px 2px #fff;
+		line-height:1.9em;
+
+		q {
+			font-family: $font-titles;
+			quotes: '\201c' '\201d';
+			padding:0 4em;
+			margin-bottom:.5rem;
+			display:block;
+			font-style:italic;
+		}
+
+		q:before {
+		content: open-quote;
+		font-family:'Times New Roman',serif;
+		font-size:4rem;
+		display:block;
+		text-align:left;
+		line-height:0;
+		position:relative;
+		left:-1.5rem;
+		}
+
+		cite {
+			display: block;
+   			text-align: right;
+    		font-family: "Open Sans",sans-serif;
+    		font-size: .8rem;
+    		color: lighten($neutral-mid,10%);
+    		text-transform: uppercase;
+    		font-style: normal;
+   			margin-top: 0.5em;
+   			padding-right:2rem;
+		}
+	}
+
+	cite {
+		font-size:0.7rem;
+		font-style:italic;
+	}
+}
+
+aside.social {
+	background:$primary-lighter;
+	border-top:.5rem solid lighten($primary-lighter,10%);
+	padding: 2rem 0;
+
+	h1 {
+		font-family:$font-special;
+		font-size:2.5rem;
+		text-align:center;
+		color:white;
+		max-width:10rem;
+		padding-bottom:.2rem;
+		margin:0 auto 1rem;
+		border-bottom:.1rem dotted lighten($primary-lighter,10%);
+		text-shadow:1px 1px 2px lighten($primary,15%);
+
+	}
+	ul {
+		list-style:none;
+		margin:0 0 1rem 0;
+		padding:0;
+		text-align:center;
+
+		li  {
+			display:inline-block;
+			
+
+			a {
+				float:left;
+				background:white;
+				border-radius:50%;
+				color:lighten($primary,25%);
+				font-size:1.5em;
+				text-decoration:none;
+				padding:.4em .5em .2em .5em;
+				margin:0 .1em;
+				box-shadow:1px 1px 10px lighten($primary,15%);
+				transition:all 0.1s ease;
+
+				span {
+				text-indent:-999em;
+				display:inline-block;
+				}
+			}
+			a:hover {
+		        transform: scale(1.1);
+		        color:lighten($primary,15%);
+			}
+		}
+
+	}
+
+}
+footer {
+	background: $primary url(/img/primary-paper.png);
+	padding-bottom:2em;
+
+	&:before {
+		@include border-diag(lighten($primary,10%),$primary);
+	}
+
+	p {
+		max-width:20rem;
+		margin:0 auto;
+		background:url(/img/logo-footer.png) top center no-repeat;
+		padding-top:4rem;
+		color:lighten($primary-lighter,10%);
+		text-align:center;
+		font-family:$font-titles;
+		font-size:.7rem;
+	}
+}
+
+/* Page-layout-specific styles */
+
+.page main {
+	display:flex;
+	flex-wrap:wrap;
+
+	h1, h2, h3, h4 {
+		font-family: $font-titles;
+	}
+
+	article {
+		flex-basis:60%;
+		margin-right:1rem;
+	}
+}
+
+.page aside[role=complementary] {
+	flex-basis:35%;
+	
+	li {
+		text-align:left;
+	}
+}
+
+.page section.cta {
+	flex-basis: 100%;
+
+	a {
+		display:block;
+		width:30%;
+		max-width:20rem;
+		margin:0 auto;
+		background: $primary;
+		color:white;
+		font-family:$font-titles;
+		text-decoration:none;
+		padding:1rem;
+	}
+}
+.home {
+	
+}
+.about {
+	header aside h2:before {
+		background:url(/img/hero-side-desk.jpg) bottom center no-repeat;
+	}
+	header nav li:nth-child(2) a {
+		color: $primary;
+	}
+}
+
+.portfolio {
+	header aside h2:before {
+		background:url(/img/hero-side-pantone.jpg) top left no-repeat;
+	}
+	header nav li:nth-child(3) a {
+		color: $primary;
+	}
+}
+
+.services {
+	header aside h2:before {
+		background:url(/img/hero-side-proposal.jpg) center center no-repeat;
+	}
+	header nav li:nth-child(4) a {
+		color: $primary;
+	}
+}
+.contact {
+	header aside h2:before {
+		background:url(/img/hero-side-businesscard.jpg) center right no-repeat;
+	}
+	header nav li:nth-child(5) a {
+		color: $primary;
+	}
+}

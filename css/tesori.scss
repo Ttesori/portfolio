@@ -210,7 +210,7 @@ header {
 		p {
 			font-style: italic;
 			color:white;
-			font-size:1.1em;
+			font-size:1em;
 			line-height: 1.5em;
 			font-family: $font-titles;
 			margin:0 26.5% .25rem 0;
@@ -306,6 +306,7 @@ main {
 			background-image:url(/img/icon_talk.svg);
 		}
 	}
+
 }
 @media screen and (max-width: 700px) {
  	main {	flex-direction: column;	}
@@ -454,23 +455,125 @@ footer {
 
 .page main {
 	display:flex;
-	flex-wrap:wrap;
+	padding:2rem 0;
 
 	h1, h2, h3, h4 {
 		font-family: $font-titles;
+		margin-bottom:.25em;
 	}
 
+
 	article {
-		flex-basis:60%;
-		margin-right:1rem;
+		flex-basis:72%;
+		margin-right:3rem;
+	}
+
+	h1 {
+		font-family: $font-special;
+		font-size:3rem;
+		margin-top:0;
+		line-height:1em;
+	}
+
+	h2 {
+		font-size:1.3rem;
+		color:$primary;
+
+	}
+
+	figure {
+	float:right;
+	margin:0 0 .5rem 1rem;
+	display: flex;
+	flex-direction:column;
+	width:40%;
+	max-width:350px;
+
+	&.left {
+		float:left;
+		margin:0 1rem .5rem 0;
+		text-align: left;
+	}
+
+	&:before {
+		@include border-diag($neutral-light,white);
+		margin-bottom:0;
+	}
+
+	figcaption {
+	    padding: 5px;
+	    font-size: .7rem;
+	    font-style: italic;
+	    color: #635C51;
+	    text-align:right;
+	}
+
+	img {
+		padding: .5em;
+		border: 2px solid #F0EFEE;
+		max-width: 100%;
+		height: auto;
+		}
+	}
+
+	p {
+		font-size:.8rem;
+		line-height:1.7em;
 	}
 }
 
 .page aside[role=complementary] {
-	flex-basis:35%;
+	padding-top:4rem;
+	
+	section {
+		padding:0;
+		text-align:left;
+		font-size:.8rem;
+		margin-bottom:2rem;
+	}
+	ul {
+		padding-left:0;
+	}
 	
 	li {
-		text-align:left;
+		list-style:none;
+	}
+
+	li:before {
+		content:"\00bb";
+		color:$secondary;
+		padding-right:1rem;
+	}
+
+	h3 {
+		font-size:1rem;
+		color:$primary;
+	}
+
+	a.button {
+		display:block;
+		padding:1.5rem 1rem;
+		border-radius:1rem;
+		text-align:center;
+		background-image:linear-gradient(rgba(255,255,255,0),rgba(255,255,255,1)),url(/img/bkg-button-resume.jpg);
+		background-size:cover;
+		border:3px solid $neutral-light;
+		font-family:$font-titles;
+		font-weight:bold;
+		text-decoration:none;
+		color:$primary;
+		text-shadow:1px 1px 0px #fff;
+		transition: all 0.2s ease-in-out;
+
+		&:hover {
+			color:$primary-darker;
+			border-color:$primary-lighter;
+		}
+
+		span {
+			font-size:.7em;
+			color:lighten($primary,20%);
+		}
 	}
 }
 

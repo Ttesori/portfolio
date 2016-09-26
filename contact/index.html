@@ -7,9 +7,20 @@ hero-body: I'm excited to hear from you! Feel free to contact me using any of th
 body-class: contact page
 ---
 	<main role="main">
-		<article>
+		<article class="full">
 			<h1>Contact Me</h1>
 			<p>Parturient ac odio consectetur a commodo inceptos vestibulum pharetra turpis nulla suspendisse sociis vestibulum ad parturient ipsum ridiculus congue ut eu. Tortor vel suspendisse a eget facilisi eget lobortis lacus nec dolor</p>
 			<p>Ante auctor morbi viverra a risus elit facilisi nibh a scelerisque cras mus. Suspendisse suspendisse ornare scelerisque vestibulum sem sed a consequat vestibulum enim lacinia a sed vitae.</p>
+			<p>Feeling long-winded? Feel free to send an email directly to tt@tesoridesign.com</p>
+
+			<form action="https://getsimpleform.com/messages?form_api_token=e0819a036b0f184b7024f0373625c51e" method="post">
+				<input type="hidden" name="redirect_to" value='http://tesori.simply-imperfect.com/contact/thanks.html'>
+				<ul>
+					<li><label for="name">Your Name:</label><input type="text" name="name"></li>
+					<li><label for="email">Your Email:</label><input type="email" name="email"></li>
+					<li><label for="message">Your Message:</label> <textarea name="message"></textarea></li>
+					<li> <input type="submit" value="Get in touch!" /></li>
+				</ul>
+			</form>
 		</article>
 	</main>

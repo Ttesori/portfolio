@@ -208,14 +208,14 @@ header {
 		}
 
 		p {
-			font-style: italic;
+			
 			color:white;
 			font-size:1em;
 			line-height: 1.5em;
 			font-family: $font-titles;
 			margin:0 26.5% .25rem 0;
 			padding:.5rem 0 1.5rem 2.5rem;
-			text-shadow: 1px 1px 3px $primary-darker;
+			text-shadow: 1px 1px 5px $primary-darker;
 		}
 
 		div {
@@ -455,7 +455,7 @@ footer {
 
 .page main {
 	display:flex;
-	padding:2rem 0;
+	padding:2rem 1rem;
 
 	h1, h2, h3, h4 {
 		font-family: $font-titles;
@@ -464,8 +464,12 @@ footer {
 
 
 	article {
-		flex-basis:72%;
+		flex-basis:70%;
 		margin-right:3rem;
+
+		&.full {
+			flex-basis:100%;
+		}
 	}
 
 	h1 {
@@ -489,30 +493,30 @@ footer {
 	width:40%;
 	max-width:350px;
 
-	&.left {
-		float:left;
-		margin:0 1rem .5rem 0;
-		text-align: left;
-	}
+		&.left {
+			float:left;
+			margin:0 1rem .5rem 0;
+			text-align: left;
+		}
 
-	&:before {
-		@include border-diag($neutral-light,white);
-		margin-bottom:0;
-	}
+		&:before {
+			@include border-diag($neutral-light,white);
+			margin-bottom:0;
+		}
 
-	figcaption {
-	    padding: 5px;
-	    font-size: .7rem;
-	    font-style: italic;
-	    color: #635C51;
-	    text-align:right;
-	}
+		figcaption {
+		    padding: 5px;
+		    font-size: .7rem;
+		    font-style: italic;
+		    color: #635C51;
+		    text-align:right;
+		}
 
-	img {
-		padding: .5em;
-		border: 2px solid #F0EFEE;
-		max-width: 100%;
-		height: auto;
+		img {
+			padding: .5em;
+			border: 2px solid #F0EFEE;
+			max-width: 100%;
+			height: auto;
 		}
 	}
 
@@ -520,15 +524,56 @@ footer {
 		font-size:.8rem;
 		line-height:1.7em;
 	}
+
+	form {
+		margin:2rem 0;
+
+		ul li {
+		  display: flex;
+		  flex-wrap: wrap;
+		  align-items: top;
+		  justify-content: center;
+
+		  label {
+		  	flex: 1 0 120px;
+	  		max-width: 175px;
+		    font-size: .8rem;
+		    padding-top:.5rem;
+		    font-family:$font-titles;
+	  		}
+		}
+
+		input[type=submit] {
+		    background: $primary;
+		    color: #fff;
+		    text-align: center;
+		    padding: .5em 2em;
+		    font-size: 1.1em;
+		    border: 3px solid $primary-lighter;
+		    font-family: 'Roboto Slab';
+		    border-radius: .5em;
+		    margin: .25rem auto;
+		}
+	}
+
+	form input, form select, form textarea {
+	    border: 2px solid $neutral-light;
+	    border-radius: .3em;
+	    padding: .5em;
+	    color: $neutral-dark;
+	    font-size: 1em;
+	    margin-bottom:1rem;
+	}
 }
 
 .page aside[role=complementary] {
 	padding-top:4rem;
+	flex-basis:25%;
+	font-size:.7rem;
 	
 	section {
 		padding:0;
 		text-align:left;
-		font-size:.8rem;
 		margin-bottom:2rem;
 	}
 	ul {
@@ -543,6 +588,10 @@ footer {
 		content:"\00bb";
 		color:$secondary;
 		padding-right:1rem;
+	}
+
+	p {
+		font-size:.7rem;
 	}
 
 	h3 {
@@ -560,6 +609,7 @@ footer {
 		border:3px solid $neutral-light;
 		font-family:$font-titles;
 		font-weight:bold;
+		font-size:.8rem;
 		text-decoration:none;
 		color:$primary;
 		text-shadow:1px 1px 0px #fff;
@@ -568,6 +618,12 @@ footer {
 		&:hover {
 			color:$primary-darker;
 			border-color:$primary-lighter;
+			font-size:.9rem;
+			padding:inherit 0;
+
+			span {
+				display:none;
+			}
 		}
 
 		span {
@@ -592,6 +648,11 @@ footer {
 		padding:1rem;
 	}
 }
+
+@media screen and (max-width: 899px) {
+ 	.page main {	flex-direction: column;	}
+}
+
 .home {
 	
 }

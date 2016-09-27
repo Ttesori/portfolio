@@ -190,6 +190,10 @@ main {
   display: flex;
 }
 
+main a {
+  color: #4ba39c;
+}
+
 main section {
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
@@ -485,9 +489,18 @@ footer p {
   height: auto;
 }
 
+.page main figure.left {
+  float: left;
+  margin: 0 1rem .5rem 0;
+}
+
 .page main p {
   font-size: .8rem;
   line-height: 1.7em;
+}
+
+.page main li {
+  line-height: 1.2rem;
 }
 
 .page main form {
@@ -541,7 +554,7 @@ footer p {
 }
 
 .page aside[role=complementary] {
-  padding-top: 4rem;
+  padding-top: 3rem;
   -webkit-flex-basis: 25%;
       -ms-flex-preferred-size: 25%;
           flex-basis: 25%;
@@ -644,12 +657,117 @@ footer p {
   color: #4ba39c;
 }
 
+.about main aside .portfolio h3 {
+  margin-bottom: .5rem;
+}
+
+.about main aside .portfolio ul {
+  margin: 0;
+  padding: 0;
+}
+
+.about main aside .portfolio ul li {
+  display: block;
+  list-style: none;
+  margin-bottom: .5rem;
+}
+
+.about main aside .portfolio ul li:before {
+  display: none;
+}
+
+.about main aside .portfolio ul li a {
+  display: block;
+  text-underline: none;
+}
+
+.about main aside .portfolio ul li a img {
+  border: 1px solid #F0EFEE;
+  padding: 5px;
+  max-width: 200px;
+}
+
 .portfolio header aside h2:before {
   background: url(/img/hero-side-pantone.jpg) top left no-repeat;
 }
 
 .portfolio header nav li:nth-child(3) a {
   color: #4ba39c;
+}
+
+.portfolio #hero {
+  display: none;
+}
+
+.portfolio header:after {
+  content: '';
+  display: block;
+  height: 1rem;
+  background: repeating-linear-gradient(-45deg, #F0EFEE 0px, #F0EFEE 2px, white 3px, white 8px, #F0EFEE 9px);
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+}
+
+.portfolio main {
+  padding-top: 1rem;
+}
+
+.portfolio main article {
+  -webkit-flex-basis: 85%;
+      -ms-flex-preferred-size: 85%;
+          flex-basis: 85%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.portfolio main article h1 {
+  font-size: 3.5rem;
+}
+
+.portfolio main article h2:after {
+  content: '';
+  display: block;
+  width: 40%;
+  height: .13rem;
+  background: #d8d6d3 url(/img/border-dotted-trans.svg) repeat-x;
+  background-size: .37rem auto;
+  margin: .25rem auto 1rem;
+}
+
+.portfolio main article h2:after {
+  margin: .5rem auto 1rem;
+}
+
+.portfolio main article ul {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.portfolio main article ul li {
+  list-style: none;
+}
+
+.portfolio main article ul li a {
+  display: block;
+  padding: 5px;
+  padding-bottom: 0;
+  border: 1px solid #F0EFEE;
+  margin: .5rem;
+}
+
+.portfolio main article ul li a img {
+  max-width: 225px;
+}
+
+.portfolio main article ul li a span {
+  display: none;
 }
 
 .services header aside h2:before {
@@ -666,4 +784,217 @@ footer p {
 
 .contact header nav li:nth-child(5) a {
   color: #4ba39c;
+}
+
+.piece header:after {
+  content: '';
+  display: block;
+  height: 1rem;
+  background: repeating-linear-gradient(-45deg, #F0EFEE 0px, #F0EFEE 2px, white 3px, white 8px, #F0EFEE 9px);
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+}
+
+.piece main {
+  padding: 1rem 1rem 4rem;
+  display: block;
+}
+
+.piece main article {
+  margin-right: 0;
+}
+
+.piece main article h1 {
+  font-size: 3.5em;
+  text-align: center;
+  margin-bottom: 0;
+  margin-bottom: .2em;
+}
+
+.piece main article h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.piece main article h2:after {
+  display: none;
+}
+
+.piece main article section {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  margin-bottom: 1.25rem;
+}
+
+.piece main article h3 {
+  -webkit-flex-basis: 25%;
+      -ms-flex-preferred-size: 25%;
+          flex-basis: 25%;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  margin-right: 2rem;
+  color: #4ba39c;
+}
+
+.piece main article p {
+  -webkit-flex-basis: 75%;
+      -ms-flex-preferred-size: 75%;
+          flex-basis: 75%;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.piece main article figure {
+  float: none;
+  margin: .5rem auto;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  max-width: 100%;
+}
+
+.piece main article figure .featpic {
+  -webkit-flex-basis: 65%;
+      -ms-flex-preferred-size: 65%;
+          flex-basis: 65%;
+  margin: .5rem auto;
+  margin-right: 2rem;
+}
+
+.piece main article figure .sidepic {
+  -webkit-flex-basis: 35%;
+      -ms-flex-preferred-size: 35%;
+          flex-basis: 35%;
+  padding-top: 1rem;
+}
+
+.piece main article figure:before {
+  border: 0;
+  background: none;
+  height: 0;
+}
+
+.piece main article figure .featpic img {
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+}
+
+.piece main article figure .sidepic img {
+  max-width: 150px;
+  height: auto;
+  display: inline-block;
+  margin: .2rem;
+}
+
+.piece main article figure img {
+  display: inline;
+}
+
+.piece main article.single figure .featpic {
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+}
+
+.piece main nav {
+  margin-top: 4rem;
+}
+
+.piece main nav h2 {
+  font-family: FeltThat, Georgia, cursive;
+  text-align: center;
+  font-size: 2.4rem;
+}
+
+.piece .lSSlideOuter .lSPager.lSpg > li a {
+  background: #e3e2e0;
+}
+
+.piece .lSSlideOuter .lSPager.lSpg > li:hover a, .piece .lSSlideOuter .lSPager.lSpg > li.active a {
+  background: #96d673;
+}
+
+#lightSlider {
+  margin-top: 1rem;
+}
+
+#lightSlider li {
+  position: relative;
+}
+
+#lightSlider li a img {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  border: 2px solid #F0EFEE;
+}
+
+#lightSlider li span {
+  visibility: hidden;
+  position: absolute;
+  bottom: -150px;
+  left: 7px;
+  right: 7px;
+  height: auto;
+  color: white;
+  background: rgba(75, 163, 156, 0.8);
+  text-shadow: 1px 1px 1px #287670;
+  font-size: .7rem;
+  font-family: "Roboto Slab", Georgia, serif;
+  text-align: center;
+  padding: 10px;
+  transition: all 0.15s ease-in-out;
+  opacity: 0;
+}
+
+#lightSlider li:hover span {
+  visibility: visible;
+  opacity: 1;
+  bottom: 13px;
+}
+
+@media screen and (max-width: 1000px) {
+  .piece main article {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto;
+  }
+  .piece main article figure {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  .piece main article figure .featpic {
+    max-width: 100%;
+    margin: 1rem auto 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .piece main article section {
+    display: block;
+  }
+  .piece main article section h3 {
+    text-align: center;
+    display: block;
+    margin: 0;
+    margin-bottom: .5rem;
+  }
+  .piece main article section p {
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
 }

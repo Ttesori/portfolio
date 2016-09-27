@@ -259,6 +259,10 @@ main {
 	padding:2rem 1rem;
 	display:flex;
 
+	a {
+		color:$primary;
+	}
+
 	section {
 		flex-grow:1;
 		text-align:center;
@@ -486,12 +490,12 @@ footer {
 	}
 
 	figure {
-	float:right;
-	margin:0 0 .5rem 1rem;
-	display: flex;
-	flex-direction:column;
-	width:40%;
-	max-width:350px;
+		float:right;
+		margin:0 0 .5rem 1rem;
+		display: flex;
+		flex-direction:column;
+		width:40%;
+		max-width:350px;
 
 		&.left {
 			float:left;
@@ -520,9 +524,18 @@ footer {
 		}
 	}
 
+	figure.left {
+		float:left;
+		margin:0 1rem .5rem 0;
+	}
+
 	p {
 		font-size:.8rem;
 		line-height:1.7em;
+	}
+
+	li {
+		line-height:1.2rem;
 	}
 
 	form {
@@ -567,7 +580,7 @@ footer {
 }
 
 .page aside[role=complementary] {
-	padding-top:4rem;
+	padding-top:3rem;
 	flex-basis:25%;
 	font-size:.7rem;
 	
@@ -663,14 +676,106 @@ footer {
 	header nav li:nth-child(2) a {
 		color: $primary;
 	}
+
+	main aside .portfolio {
+		h3 {
+			margin-bottom:.5rem;
+		}
+
+		ul {
+			margin:0;
+			padding:0;
+
+			li {
+				display:block;
+				list-style:none;
+				margin-bottom:.5rem;
+
+				&:before {
+					display:none;
+				}
+
+				a {
+					display:block;
+					text-underline:none;
+
+					img {
+						border:1px solid $neutral-light;
+						padding:5px;
+						max-width:200px;
+
+					}
+				}
+			}
+		}
+	}
 }
 
 .portfolio {
+
 	header aside h2:before {
 		background:url(/img/hero-side-pantone.jpg) top left no-repeat;
 	}
 	header nav li:nth-child(3) a {
 		color: $primary;
+	}
+
+	#hero {
+		display:none;
+	}
+
+	header:after {
+		@include border-diag($neutral-light,white);
+		margin-top:1rem;
+	}
+
+	main {
+		padding-top:1rem; 
+
+		article {
+			flex-basis:85%;
+			text-align:center;
+			margin:0 auto;
+
+			h1 {
+				font-size:3.5rem;
+			}
+
+			h2 {
+				@include border-dotted-after($neutral-midlight,40%)
+
+				&:after {
+					margin:.5rem auto 1rem;
+				}
+			}
+
+			ul {
+				display:flex;
+				flex-wrap:wrap;
+				justify-content:center;
+
+				li {
+					list-style:none;
+
+					a {
+						display:block;
+						padding:5px;
+						padding-bottom:0;
+						border:1px solid $neutral-light;
+						margin:.5rem;
+
+						img {
+							max-width:225px;
+						}
+
+						span {
+							display:none;
+						}
+
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -688,5 +793,207 @@ footer {
 	}
 	header nav li:nth-child(5) a {
 		color: $primary;
+	}
+}
+
+.piece {
+
+	header:after {
+		@include border-diag($neutral-light,white);
+		margin-top:1rem;
+	}
+
+	main {
+		padding:1rem 1rem 4rem;
+		display:block;
+
+		article {
+			margin-right:0;
+
+			h1 {
+				font-size:3.5em;
+				text-align:center;
+				margin-bottom:0;
+				margin-bottom:.2em;
+			}
+
+			h2 {
+				text-align:center;
+				margin-top:0;
+
+				&:after {
+					display:none;
+				}
+			}
+
+			section {
+				display:flex;
+				align-items: baseline;
+				margin-bottom:1.25rem;
+			}
+
+			h3 {
+				flex-basis:25%;
+				text-align:right;
+				margin:0;
+				padding:0;
+				margin-right:2rem;
+				color:$primary;
+			}
+
+			p {
+				flex-basis:75%;
+				text-align:left;
+				margin:0;
+				padding:0;
+			}
+				
+			figure {
+				float:none;
+				margin:.5rem auto;
+				display: flex;
+				flex-direction:row;
+				width:100%;
+				max-width:100%;
+
+				.featpic {
+					flex-basis:65%;
+					margin:.5rem auto;
+					margin-right:2rem;
+				}
+
+				.sidepic {
+					flex-basis: 35%;
+					padding-top:1rem;
+				}
+
+				&:before {
+					border:0;
+					background:none;
+					height:0;
+				}
+
+				.featpic img {
+					width:100%;
+					height:auto;
+					padding:1rem;
+				}
+
+				.sidepic img{
+					max-width:150px;
+					height:auto;
+					display:inline-block;
+					margin:.2rem;
+				}
+
+				img {
+					display:inline;
+				}
+			}
+		}
+
+		article.single figure .featpic {
+			flex-basis:100%;
+		}
+
+		nav {
+			margin-top:4rem;
+
+			h2 {
+				font-family:$font-special;
+				text-align:center;
+				font-size:2.4rem;
+			}
+		}
+	}
+}
+.piece .lSSlideOuter .lSPager.lSpg > li a {
+	background:lighten($neutral-mid,37%);
+}
+.piece .lSSlideOuter .lSPager.lSpg > li:hover a, .piece .lSSlideOuter .lSPager.lSpg > li.active a {
+	background:$secondary;
+}
+
+#lightSlider {
+	margin-top:1rem;
+
+	li {
+		position:relative;
+
+	}
+
+	li a img {
+	width:100%;
+	height:auto;
+	padding:5px;
+	border:2px solid $neutral-light;
+	}
+
+	li span {
+		visibility:hidden;
+		position:absolute;
+		bottom:-150px;
+		left:7px;
+		right:7px;
+		height:auto;
+		color:white;
+		background:rgba($primary,0.8);
+		text-shadow:1px 1px 1px $primary-darker;
+		font-size:.7rem;
+		font-family:$font-titles;
+		text-align:center;
+		padding:10px;
+		transition: all 0.15s ease-in-out;
+		opacity:0;
+	}
+
+	li:hover span {
+		visibility: visible;
+		opacity:1;
+		bottom:13px;
+	}
+
+}
+
+
+@media screen and (max-width:1000px) {
+	.piece main article {
+		text-align:center;
+		max-width:850px;
+		margin:0 auto;
+
+		figure {
+			flex-direction:column;
+			text-align:center;
+
+			.featpic {
+				max-width:100%;
+				margin:1rem auto 0;
+			}
+
+			.sidepic {
+			}
+		}
+	}
+}
+
+
+@media screen and (max-width:1000px) {
+	.piece main article section {
+		display:block;
+
+		h3 {
+			text-align:center;
+			display:block;
+			margin:0;
+			margin-bottom:.5rem;
+		}
+
+
+		p {
+			display:block;
+			text-align:center;
+			margin-bottom:1rem;
+		}
 	}
 }

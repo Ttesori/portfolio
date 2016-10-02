@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* 
  * Tesori Design by Toni Tesori
  * 9.29.2016 */
@@ -79,6 +80,7 @@ header nav li a {
   text-decoration: none;
   transition: all 0.2s ease-in-out;
   line-height: 1.6rem;
+  white-space: nowrap;
 }
 
 header nav li a:hover {
@@ -88,11 +90,7 @@ header nav li a:hover {
 
 @media screen and (max-width: 750px) {
   header nav li {
-    width: 45%;
-  }
-  header nav li:last-of-type {
-    width: 100%;
-    padding-right: 45%;
+    display: inline;
   }
 }
 
@@ -194,63 +192,6 @@ main a {
   color: #4ba39c;
 }
 
-main section {
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  text-align: center;
-  padding: 0px 1rem;
-}
-
-main section h1 {
-  font-family: FeltThat, Georgia, cursive;
-  font-size: 3.5em;
-  line-height: .9em;
-  margin: 0;
-  text-transform: lowercase;
-  padding-top: 4.25rem;
-  background-size: auto 4.75rem;
-  background-position: top center;
-  background-repeat: no-repeat;
-}
-
-main section h1:after {
-  content: '';
-  display: block;
-  width: 70%;
-  height: .13rem;
-  background: #caeab9 url(/img/border-dotted-trans.svg) repeat-x;
-  background-size: .37rem auto;
-  margin: .25rem auto 1rem;
-}
-
-main section h1 span {
-  display: none;
-}
-
-@media screen and (min-width: 900px) {
-  main section h1 span {
-    display: inline;
-  }
-}
-
-main section p {
-  font-size: .8rem;
-}
-
-main section:nth-of-type(1) h1 {
-  background-image: url(/img/icon_portfolio.svg);
-}
-
-main section:nth-child(2) h1 {
-  background-image: url(/img/icon_book.svg);
-  background-size: auto 4.5rem;
-}
-
-main section:nth-of-type(3) h1 {
-  background-image: url(/img/icon_talk.svg);
-}
-
 @media screen and (max-width: 700px) {
   main {
     -webkit-flex-direction: column;
@@ -266,6 +207,15 @@ main section:nth-of-type(3) h1 {
   }
   main section h1:after {
     margin-bottom: .5rem;
+  }
+  main {
+    display: block;
+  }
+  main article {
+    display: block;
+  }
+  main aside {
+    display: block;
   }
 }
 
@@ -425,7 +375,7 @@ footer p {
   -webkit-flex-basis: 70%;
       -ms-flex-preferred-size: 70%;
           flex-basis: 70%;
-  margin-right: 3rem;
+  margin-right: 4rem;
 }
 
 .page main article.full {
@@ -501,6 +451,37 @@ footer p {
 
 .page main li {
   line-height: 1.2rem;
+}
+
+.page main ol {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  display: table;
+  border-collapse: collapse;
+}
+
+.page main ol li {
+  font-size: .8rem;
+  counter-increment: step-counter;
+  margin-bottom: .5em;
+  margin-left: 4em;
+  padding-left: 2em;
+  display: table-row;
+  border-bottom: 10px solid transparent;
+}
+
+.page main ol li:before {
+  content: counter(step-counter) " ›";
+  padding-top: .5rem;
+  text-align: right;
+  padding-right: .8em;
+  font-size: 1.5rem;
+  font-family: 'Roboto Slab';
+  color: #96d673;
+  display: table-cell;
+  /* aha! */
+  vertical-align: text-top;
 }
 
 .page main form {
@@ -605,6 +586,7 @@ footer p {
   color: #4ba39c;
   text-shadow: 1px 1px 0px #fff;
   transition: all 0.2s ease-in-out;
+  max-width: 250px;
 }
 
 .page aside[role=complementary] a.button:hover {
@@ -621,6 +603,77 @@ footer p {
 .page aside[role=complementary] a.button span {
   font-size: .7em;
   color: #8bc9c4;
+}
+
+.page aside[role=complementary] .portfolio h3 {
+  margin-bottom: .5rem;
+}
+
+.page aside[role=complementary] .portfolio ul {
+  margin: 0;
+  padding: 0;
+}
+
+.page aside[role=complementary] .portfolio ul li {
+  display: inline-block;
+  list-style: none;
+  margin-bottom: .5rem;
+  margin-right: .5rem;
+}
+
+.page aside[role=complementary] .portfolio ul li:before {
+  display: none;
+}
+
+.page aside[role=complementary] .portfolio ul li a {
+  display: block;
+  text-underline: none;
+}
+
+.page aside[role=complementary] .portfolio ul li a:hover img {
+  border-color: #a5d1cd;
+  box-shadow: 1px 1px 1px #a5d1cd;
+}
+
+.page aside[role=complementary] .portfolio ul li a img {
+  border: 1px solid #F0EFEE;
+  padding: 5px;
+  max-width: 200px;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 1px #F0EFEE;
+  transition: all 0.2s ease-in-out;
+}
+
+.page aside[role=complementary] form {
+  background: #F0EFEE;
+  padding: 0.25rem;
+  border-radius: 1rem;
+}
+
+.page aside[role=complementary] form h3 {
+  text-align: center;
+}
+
+.page aside[role=complementary] form li {
+  display: block;
+  text-align: center;
+}
+
+.page aside[role=complementary] form li:before {
+  display: none;
+}
+
+.page aside[role=complementary] form label {
+  display: block;
+  max-width: 100%;
+  font-size: .7rem;
+  padding: 0 1rem;
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
+}
+
+.page aside[role=complementary] form textarea, .page aside[role=complementary] form input {
+  border-color: #d8d6d3;
 }
 
 .page section.cta {
@@ -649,42 +702,80 @@ footer p {
   }
 }
 
+.home main section {
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+  padding: 0px 1rem;
+}
+
+.home main section h1 {
+  font-family: FeltThat, Georgia, cursive;
+  font-size: 3.5em;
+  line-height: .9em;
+  margin: 0;
+  text-transform: lowercase;
+  background-size: auto 4.75rem;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.home main section h1:after {
+  content: '';
+  display: block;
+  width: 70%;
+  height: .13rem;
+  background: #caeab9 url(/img/border-dotted-trans.svg) repeat-x;
+  background-size: .37rem auto;
+  margin: .25rem auto 1rem;
+}
+
+.home main section h1 a {
+  text-decoration: none;
+  color: #635C51;
+  padding-top: 4.25rem;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+
+.home main section h1 a:hover {
+  color: #4ba39c;
+}
+
+.home main section h1 span {
+  display: none;
+}
+
+@media screen and (min-width: 900px) {
+  .home main section h1 span {
+    display: inline;
+  }
+}
+
+.home main section p {
+  font-size: .8rem;
+}
+
+.home main section:nth-of-type(1) h1 {
+  background-image: url(/img/icon_portfolio.svg);
+}
+
+.home main section:nth-child(2) h1 {
+  background-image: url(/img/icon_book.svg);
+  background-size: auto 4.5rem;
+}
+
+.home main section:nth-of-type(3) h1 {
+  background-image: url(/img/icon_talk.svg);
+}
+
 .about header aside h2:before {
   background: url(/img/hero-side-desk.jpg) bottom center no-repeat;
 }
 
 .about header nav li:nth-child(2) a {
   color: #4ba39c;
-}
-
-.about main aside .portfolio h3 {
-  margin-bottom: .5rem;
-}
-
-.about main aside .portfolio ul {
-  margin: 0;
-  padding: 0;
-}
-
-.about main aside .portfolio ul li {
-  display: block;
-  list-style: none;
-  margin-bottom: .5rem;
-}
-
-.about main aside .portfolio ul li:before {
-  display: none;
-}
-
-.about main aside .portfolio ul li a {
-  display: block;
-  text-underline: none;
-}
-
-.about main aside .portfolio ul li a img {
-  border: 1px solid #F0EFEE;
-  padding: 5px;
-  max-width: 200px;
 }
 
 .portfolio header aside h2:before {
@@ -760,10 +851,20 @@ footer p {
   padding-bottom: 0;
   border: 1px solid #F0EFEE;
   margin: .5rem;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 1px #d8d6d3;
+  transition: all 0.2s ease-in-out;
+}
+
+.portfolio main article ul li a:hover {
+  border-color: #a5d1cd;
+  background: #f3f9f8;
+  box-shadow: 1px 1px 1px #a5d1cd;
 }
 
 .portfolio main article ul li a img {
   max-width: 225px;
+  border-radius: 0.5rem;
 }
 
 .portfolio main article ul li a span {
@@ -784,6 +885,16 @@ footer p {
 
 .contact header nav li:nth-child(5) a {
   color: #4ba39c;
+}
+
+.contact main aside section.portfolio li:before {
+  display: none;
+}
+
+.contact main aside section.portfolio img {
+  border: 1px solid #F0EFEE;
+  padding: 5px;
+  max-width: 200px;
 }
 
 .piece header:after {

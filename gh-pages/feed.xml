@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tesori Design</title>
+    <description>A Florida-based graphic designer and web developer.
+</description>
+    <link>http://tesoridesign.com/</link>
+    <atom:link href="http://tesoridesign.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 29 Aug 2017 12:11:34 -0400</pubDate>
+    <lastBuildDate>Tue, 29 Aug 2017 12:11:34 -0400</lastBuildDate>
+    <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Hello World</title>
+        <description>&lt;h1 id=&quot;my-first-blog-post&quot;&gt;My First Blog Post&lt;/h1&gt;
+
+&lt;p&gt;This is my first blog post using Markdown. Is it easy? Let’s see! Whee!&lt;/p&gt;
+
+&lt;h2 id=&quot;header-numero-dos&quot;&gt;Header Numero Dos&lt;/h2&gt;
+
+&lt;p&gt;Snack time, homies. Eating and apple and cheesestick. Almost typed cheesesteak. One is kinda healthy, the other most def not.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 26 Sep 2016 00:00:00 -0400</pubDate>
+        <link>http://tesoridesign.com/post/hello-world.html</link>
+        <guid isPermaLink="true">http://tesoridesign.com/post/hello-world.html</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

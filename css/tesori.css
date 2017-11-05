@@ -125,7 +125,7 @@ header aside h2:before {
 header aside h3 {
   font-size: 1.3em;
   color: white;
-  background: url(http://simply-imperfect.com/img/title-sketchy-white-small.svg) no-repeat;
+  background: url(/img/title-sketchy-white-small.svg) no-repeat;
   background-size: 100% auto;
   font-family: 'Roboto Slab';
   padding: 0 .75rem;

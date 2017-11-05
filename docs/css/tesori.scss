@@ -194,7 +194,7 @@ header {
 
 		h3 {
 			font-size:1.3em;
-			color: $primary;
+			color: white;
 			text-shadow: 1px 1px 3px $primary-lighter;
 			@include bkg-sketchy-small(white);
 			padding:0 .75rem;

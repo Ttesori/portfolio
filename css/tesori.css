@@ -12,7 +12,8 @@
 
 /* Universal Styles */
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 :root {
@@ -28,10 +29,13 @@
 body {
   font-family: "Open Sans", Helvetica, sans-serif;
   margin: 0;
-  color: #635C51;
+  color: #635c51;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: normal;
 }
 
@@ -51,10 +55,10 @@ header h1:after {
   content: '';
   display: block;
   width: 75%;
-  height: .13rem;
+  height: 0.13rem;
   background: #96d673 url(/img/border-dotted-trans.svg) repeat-x;
-  background-size: .37rem auto;
-  margin: .25rem auto 1rem;
+  background-size: 0.37rem auto;
+  margin: 0.25rem auto 1rem;
 }
 
 header nav {
@@ -71,13 +75,14 @@ header nav ul {
 
 header nav li {
   display: inline-block;
-  padding: .5em .75em;
+  padding: 0.5em 0.75em;
 }
 
 header nav li a {
   font-family: "Roboto Slab", Georgia, serif;
-  color: #635C51;
+  color: #635c51;
   text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   line-height: 1.6rem;
   white-space: nowrap;
@@ -96,10 +101,11 @@ header nav li a:hover {
 
 header aside {
   background-image: radial-gradient(rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0.75) 100%), url(/img/paper.png);
-  margin: .5rem auto;
+  margin: 0.5rem auto;
 }
 
-header aside h2, header aside h3 {
+header aside h2,
+header aside h3 {
   font-family: FeltThat, Georgia, cursive;
 }
 
@@ -107,12 +113,12 @@ header aside h2 {
   font-size: 3rem;
   text-shadow: 2px 2px 5px #287670;
   color: white;
-  margin: 0 26.5% .1rem .5rem;
-  padding-top: .3rem;
+  margin: 0 26.5% 0.1rem 0.5rem;
+  padding-top: 0.3rem;
 }
 
 header aside h2:before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   right: 0;
@@ -125,12 +131,12 @@ header aside h2:before {
 header aside h3 {
   font-size: 1.3em;
   color: white;
-  background: url(/img/title-sketchy-white-small.svg) no-repeat;
+  background: url(http://simply-imperfect.com/img/title-sketchy-white-small.svg) no-repeat;
   background-size: 100% auto;
   font-family: 'Roboto Slab';
-  padding: 0 .75rem;
+  padding: 0 0.75rem;
   width: 9rem;
-  margin: 0 0 .25rem 2rem;
+  margin: 0 0 0.25rem 2rem;
   font-style: italic;
   letter-spacing: 1px;
   text-shadow: 1px 1px 5px #287670;
@@ -141,8 +147,8 @@ header aside p {
   font-size: 1em;
   line-height: 1.5em;
   font-family: "Roboto Slab", Georgia, serif;
-  margin: 0 26.5% .25rem 0;
-  padding: .5rem 0 1.5rem 2.5rem;
+  margin: 0 26.5% 0.25rem 0;
+  padding: 0.5rem 0 1.5rem 2.5rem;
   text-shadow: 1px 1px 5px #287670;
 }
 
@@ -155,7 +161,8 @@ header aside div {
   background-size: cover;
   background-position: center;
   position: relative;
-  box-shadow: 8px 0 15px -10px #8a857d, -8px 0 15px -10px #8a857d;
+  -webkit-box-shadow: 8px 0 15px -10px #8a857d, -8px 0 15px -10px #8a857d;
+          box-shadow: 8px 0 15px -10px #8a857d, -8px 0 15px -10px #8a857d;
 }
 
 @media screen and (min-width: 750px) {
@@ -171,10 +178,10 @@ header:before {
   content: '';
   display: block;
   height: 1rem;
-  background: repeating-linear-gradient(-45deg, #F0EFEE 0px, #F0EFEE 2px, white 3px, white 8px, #F0EFEE 9px);
+  background: repeating-linear-gradient(-45deg, #f0efee 0px, #f0efee 2px, white 3px, white 8px, #f0efee 9px);
   margin-bottom: 1.5rem;
   border-top: 0.25em solid #96d673;
-  padding-top: .2rem;
+  padding-top: 0.2rem;
   background-clip: content-box;
 }
 
@@ -183,6 +190,8 @@ main {
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -192,17 +201,20 @@ main a {
 
 @media screen and (max-width: 700px) {
   main {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   main section {
     margin-bottom: 1em;
   }
   main section p {
     padding: 0 2em;
-    margin-top: .2em;
+    margin-top: 0.2em;
   }
   main section h1:after {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
   main {
     display: block;
@@ -225,9 +237,9 @@ aside.testimonial:before {
   content: '';
   display: block;
   height: 1rem;
-  background: repeating-linear-gradient(-45deg, #F0EFEE 0px, #F0EFEE 2px, white 3px, white 8px, #F0EFEE 9px);
+  background: repeating-linear-gradient(-45deg, #f0efee 0px, #f0efee 2px, white 3px, white 8px, #f0efee 9px);
   margin-bottom: 1.5rem;
-  border-bottom: .2rem solid white;
+  border-bottom: 0.2rem solid white;
   margin-bottom: 1rem;
 }
 
@@ -241,16 +253,16 @@ aside.testimonial blockquote {
 
 aside.testimonial blockquote q {
   font-family: "Roboto Slab", Georgia, serif;
-  quotes: '\201c' '\201d';
+  quotes: "“" "”";
   padding: 0 4em;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   display: block;
   font-style: italic;
 }
 
 aside.testimonial blockquote q:before {
   content: open-quote;
-  font-family: 'Times New Roman',serif;
+  font-family: 'Times New Roman', serif;
   font-size: 4rem;
   display: block;
   text-align: left;
@@ -262,8 +274,8 @@ aside.testimonial blockquote q:before {
 aside.testimonial blockquote cite {
   display: block;
   text-align: right;
-  font-family: "Open Sans",sans-serif;
-  font-size: .8rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8rem;
   color: #a29e98;
   text-transform: uppercase;
   font-style: normal;
@@ -288,7 +300,7 @@ aside.social h1 {
   text-align: center;
   color: white;
   max-width: 10rem;
-  padding-bottom: .2rem;
+  padding-bottom: 0.2rem;
   margin: 0 auto 1rem;
   border-bottom: 0.1rem dotted #c7e2e0;
   text-shadow: 1px 1px 2px #79c1bc;
@@ -306,25 +318,29 @@ aside.social ul li {
 }
 
 aside.social ul li a {
-  float: left;
-  background: white;
+  display: inline-block;
   border-radius: 50%;
+  background: white;
   color: #9cd1cd;
   font-size: 1.5em;
   text-decoration: none;
-  padding: .4em .5em .2em .5em;
-  margin: 0 .1em;
-  box-shadow: 1px 1px 10px #79c1bc;
+  padding: 0.3rem 0.7rem;
+  margin: 0 0.1rem;
+  -webkit-box-shadow: 1px 1px 10px #79c1bc;
+          box-shadow: 1px 1px 10px #79c1bc;
+  -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
 }
 
-aside.social ul li a span {
-  text-indent: -999em;
+aside.social ul li a i {
+  font-size: 1.4rem;
+  width: 1.5rem;
   display: inline-block;
 }
 
 aside.social ul li a:hover {
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
   color: #79c1bc;
 }
 
@@ -349,27 +365,34 @@ footer p {
   color: #c7e2e0;
   text-align: center;
   font-family: "Roboto Slab", Georgia, serif;
-  font-size: .7rem;
+  font-size: 0.7rem;
 }
 
 /* Page-layout-specific styles */
 .page main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 2rem 1rem;
 }
 
-.page main h1, .page main h2, .page main h3, .page main h4 {
+.page main h1,
+.page main h2,
+.page main h3,
+.page main h4 {
   font-family: "Roboto Slab", Georgia, serif;
-  margin-bottom: .25em;
+  margin-bottom: 0.25em;
 }
 
 .page main article {
-  flex-basis: 70%;
+  -ms-flex-preferred-size: 70%;
+      flex-basis: 70%;
   margin-right: 4rem;
 }
 
 .page main article.full {
-  flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
 }
 
 .page main h1 {
@@ -386,16 +409,21 @@ footer p {
 
 .page main figure {
   float: right;
-  margin: 0 0 .5rem 1rem;
+  margin: 0 0 0.5rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 40%;
   max-width: 350px;
 }
 
 .page main figure.left {
   float: left;
-  margin: 0 1rem .5rem 0;
+  margin: 0 1rem 0.5rem 0;
   text-align: left;
 }
 
@@ -403,33 +431,33 @@ footer p {
   content: '';
   display: block;
   height: 1rem;
-  background: repeating-linear-gradient(-45deg, #F0EFEE 0px, #F0EFEE 2px, white 3px, white 8px, #F0EFEE 9px);
+  background: repeating-linear-gradient(-45deg, #f0efee 0px, #f0efee 2px, white 3px, white 8px, #f0efee 9px);
   margin-bottom: 1.5rem;
   margin-bottom: 0;
 }
 
 .page main figure figcaption {
   padding: 5px;
-  font-size: .7rem;
+  font-size: 0.7rem;
   font-style: italic;
-  color: #635C51;
+  color: #635c51;
   text-align: right;
 }
 
 .page main figure img {
-  padding: .5em;
-  border: 2px solid #F0EFEE;
+  padding: 0.5em;
+  border: 2px solid #f0efee;
   max-width: 100%;
   height: auto;
 }
 
 .page main figure.left {
   float: left;
-  margin: 0 1rem .5rem 0;
+  margin: 0 1rem 0.5rem 0;
 }
 
 .page main p {
-  font-size: .8rem;
+  font-size: 0.8rem;
   line-height: 1.7em;
 }
 
@@ -446,9 +474,9 @@ footer p {
 }
 
 .page main ol li {
-  font-size: .8rem;
+  font-size: 0.8rem;
   counter-increment: step-counter;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   margin-left: 4em;
   padding-left: 2em;
   display: table-row;
@@ -457,9 +485,9 @@ footer p {
 
 .page main ol li:before {
   content: counter(step-counter) " ›";
-  padding-top: .5rem;
+  padding-top: 0.5rem;
   text-align: right;
-  padding-right: .8em;
+  padding-right: 0.8em;
   font-size: 1.5rem;
   font-family: 'Roboto Slab';
   color: #96d673;
@@ -473,183 +501,202 @@ footer p {
 }
 
 .page main form ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  align-items: top;
-  justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: top;
+      -ms-flex-align: top;
+          align-items: top;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .page main form ul li label {
-  flex: 1 0 120px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 120px;
+          flex: 1 0 120px;
   max-width: 175px;
-  font-size: .8rem;
-  padding-top: .5rem;
+  font-size: 0.8rem;
+  padding-top: 0.5rem;
   font-family: "Roboto Slab", Georgia, serif;
 }
 
-.page main form input[type=submit] {
+.page main form input[type='submit'] {
   background: #4ba39c;
   color: #fff;
   text-align: center;
-  padding: .5em 2em;
+  padding: 0.5em 2em;
   font-size: 1.1em;
   border: 3px solid #a5d1cd;
   font-family: 'Roboto Slab';
-  border-radius: .5em;
-  margin: .25rem auto;
+  border-radius: 0.5em;
+  margin: 0.25rem auto;
 }
 
-.page main form input, .page main form select, .page main form textarea {
-  border: 2px solid #F0EFEE;
-  border-radius: .3em;
-  padding: .5em;
-  color: #635C51;
+.page main form input,
+.page main form select,
+.page main form textarea {
+  border: 2px solid #f0efee;
+  border-radius: 0.3em;
+  padding: 0.5em;
+  color: #635c51;
   font-size: 1em;
   margin-bottom: 1rem;
 }
 
-.page aside[role=complementary] {
+.page aside[role='complementary'] {
   padding-top: 3rem;
-  flex-basis: 25%;
-  font-size: .7rem;
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+  font-size: 0.7rem;
 }
 
-.page aside[role=complementary] section {
+.page aside[role='complementary'] section {
   padding: 0;
   text-align: left;
   margin-bottom: 2rem;
 }
 
-.page aside[role=complementary] ul {
+.page aside[role='complementary'] ul {
   padding-left: 0;
 }
 
-.page aside[role=complementary] li {
+.page aside[role='complementary'] li {
   list-style: none;
 }
 
-.page aside[role=complementary] li:before {
-  content: "\00bb";
+.page aside[role='complementary'] li:before {
+  content: '\00bb';
   color: #96d673;
   padding-right: 1rem;
 }
 
-.page aside[role=complementary] p {
-  font-size: .7rem;
+.page aside[role='complementary'] p {
+  font-size: 0.7rem;
 }
 
-.page aside[role=complementary] h3 {
+.page aside[role='complementary'] h3 {
   font-size: 1rem;
   color: #4ba39c;
 }
 
-.page aside[role=complementary] a.button {
+.page aside[role='complementary'] a.button {
   display: block;
   padding: 1.5rem 1rem;
   border-radius: 1rem;
   text-align: center;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(white)), url(/img/bkg-button-resume.jpg);
   background-image: linear-gradient(rgba(255, 255, 255, 0), white), url(/img/bkg-button-resume.jpg);
   background-size: cover;
-  border: 3px solid #F0EFEE;
+  border: 3px solid #f0efee;
   font-family: "Roboto Slab", Georgia, serif;
   font-weight: bold;
-  font-size: .8rem;
+  font-size: 0.8rem;
   text-decoration: none;
   color: #4ba39c;
   text-shadow: 1px 1px 0px #fff;
+  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   max-width: 250px;
 }
 
-.page aside[role=complementary] a.button:hover {
+.page aside[role='complementary'] a.button:hover {
   color: #287670;
   border-color: #a5d1cd;
-  font-size: .9rem;
+  font-size: 0.9rem;
   padding: inherit 0;
 }
 
-.page aside[role=complementary] a.button:hover span {
+.page aside[role='complementary'] a.button:hover span {
   display: none;
 }
 
-.page aside[role=complementary] a.button span {
-  font-size: .7em;
+.page aside[role='complementary'] a.button span {
+  font-size: 0.7em;
   color: #8bc9c4;
 }
 
-.page aside[role=complementary] .portfolio h3 {
-  margin-bottom: .5rem;
+.page aside[role='complementary'] .portfolio h3 {
+  margin-bottom: 0.5rem;
 }
 
-.page aside[role=complementary] .portfolio ul {
+.page aside[role='complementary'] .portfolio ul {
   margin: 0;
   padding: 0;
 }
 
-.page aside[role=complementary] .portfolio ul li {
+.page aside[role='complementary'] .portfolio ul li {
   display: inline-block;
   list-style: none;
-  margin-bottom: .5rem;
-  margin-right: .5rem;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
 }
 
-.page aside[role=complementary] .portfolio ul li:before {
+.page aside[role='complementary'] .portfolio ul li:before {
   display: none;
 }
 
-.page aside[role=complementary] .portfolio ul li a {
+.page aside[role='complementary'] .portfolio ul li a {
   display: block;
   text-underline: none;
 }
 
-.page aside[role=complementary] .portfolio ul li a:hover img {
+.page aside[role='complementary'] .portfolio ul li a:hover img {
   border-color: #a5d1cd;
-  box-shadow: 1px 1px 1px #a5d1cd;
+  -webkit-box-shadow: 1px 1px 1px #a5d1cd;
+          box-shadow: 1px 1px 1px #a5d1cd;
 }
 
-.page aside[role=complementary] .portfolio ul li a img {
-  border: 1px solid #F0EFEE;
+.page aside[role='complementary'] .portfolio ul li a img {
+  border: 1px solid #f0efee;
   padding: 5px;
   max-width: 200px;
   border-radius: 0.5rem;
-  box-shadow: 1px 1px 1px #F0EFEE;
+  -webkit-box-shadow: 1px 1px 1px #f0efee;
+          box-shadow: 1px 1px 1px #f0efee;
+  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
-.page aside[role=complementary] form {
-  background: #F0EFEE;
+.page aside[role='complementary'] form {
+  background: #f0efee;
   padding: 0.25rem;
   border-radius: 1rem;
 }
 
-.page aside[role=complementary] form h3 {
+.page aside[role='complementary'] form h3 {
   text-align: center;
 }
 
-.page aside[role=complementary] form li {
+.page aside[role='complementary'] form li {
   display: block;
   text-align: center;
 }
 
-.page aside[role=complementary] form li:before {
+.page aside[role='complementary'] form li:before {
   display: none;
 }
 
-.page aside[role=complementary] form label {
+.page aside[role='complementary'] form label {
   display: block;
   max-width: 100%;
-  font-size: .7rem;
+  font-size: 0.7rem;
   padding: 0 1rem;
   line-height: 1.4;
   margin-bottom: 0.25rem;
 }
 
-.page aside[role=complementary] form textarea, .page aside[role=complementary] form input {
+.page aside[role='complementary'] form textarea,
+.page aside[role='complementary'] form input {
   border-color: #d8d6d3;
 }
 
 .page section.cta {
-  flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
 }
 
 .page section.cta a {
@@ -666,12 +713,17 @@ footer p {
 
 @media screen and (max-width: 899px) {
   .page main {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
 .home main section {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   text-align: center;
   padding: 0px 1rem;
 }
@@ -679,7 +731,7 @@ footer p {
 .home main section h1 {
   font-family: FeltThat, Georgia, cursive;
   font-size: 3.5em;
-  line-height: .9em;
+  line-height: 0.9em;
   margin: 0;
   text-transform: lowercase;
   background-size: auto 4.75rem;
@@ -691,17 +743,18 @@ footer p {
   content: '';
   display: block;
   width: 70%;
-  height: .13rem;
+  height: 0.13rem;
   background: #caeab9 url(/img/border-dotted-trans.svg) repeat-x;
-  background-size: .37rem auto;
-  margin: .25rem auto 1rem;
+  background-size: 0.37rem auto;
+  margin: 0.25rem auto 1rem;
 }
 
 .home main section h1 a {
   text-decoration: none;
-  color: #635C51;
+  color: #635c51;
   padding-top: 4.25rem;
   display: inline-block;
+  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
@@ -720,7 +773,7 @@ footer p {
 }
 
 .home main section p {
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .home main section:nth-of-type(1) h1 {
@@ -760,7 +813,7 @@ footer p {
   content: '';
   display: block;
   height: 1rem;
-  background: repeating-linear-gradient(-45deg, #F0EFEE 0px, #F0EFEE 2px, white 3px, white 8px, #F0EFEE 9px);
+  background: repeating-linear-gradient(-45deg, #f0efee 0px, #f0efee 2px, white 3px, white 8px, #f0efee 9px);
   margin-bottom: 1.5rem;
   margin-top: 1rem;
 }
@@ -770,7 +823,8 @@ footer p {
 }
 
 .portfolio main article {
-  flex-basis: 85%;
+  -ms-flex-preferred-size: 85%;
+      flex-basis: 85%;
   text-align: center;
   margin: 0 auto;
 }
@@ -783,20 +837,25 @@ footer p {
   content: '';
   display: block;
   width: 40%;
-  height: .13rem;
+  height: 0.13rem;
   background: #d8d6d3 url(/img/border-dotted-trans.svg) repeat-x;
-  background-size: .37rem auto;
-  margin: .25rem auto 1rem;
+  background-size: 0.37rem auto;
+  margin: 0.25rem auto 1rem;
 }
 
-.portfolio main article h2:after {
-  margin: .5rem auto 1rem;
+.portfolio main article h2 h2:after {
+  margin: 0.5rem auto 1rem;
 }
 
 .portfolio main article ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .portfolio main article ul li {
@@ -807,17 +866,20 @@ footer p {
   display: block;
   padding: 5px;
   padding-bottom: 0;
-  border: 1px solid #F0EFEE;
-  margin: .5rem;
+  border: 1px solid #f0efee;
+  margin: 0.5rem;
   border-radius: 0.5rem;
-  box-shadow: 1px 1px 1px #d8d6d3;
+  -webkit-box-shadow: 1px 1px 1px #d8d6d3;
+          box-shadow: 1px 1px 1px #d8d6d3;
+  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
 .portfolio main article ul li a:hover {
   border-color: #a5d1cd;
   background: #f3f9f8;
-  box-shadow: 1px 1px 1px #a5d1cd;
+  -webkit-box-shadow: 1px 1px 1px #a5d1cd;
+          box-shadow: 1px 1px 1px #a5d1cd;
 }
 
 .portfolio main article ul li a img {
@@ -850,7 +912,7 @@ footer p {
 }
 
 .contact main aside section.portfolio img {
-  border: 1px solid #F0EFEE;
+  border: 1px solid #f0efee;
   padding: 5px;
   max-width: 200px;
 }
@@ -859,7 +921,7 @@ footer p {
   content: '';
   display: block;
   height: 1rem;
-  background: repeating-linear-gradient(-45deg, #F0EFEE 0px, #F0EFEE 2px, white 3px, white 8px, #F0EFEE 9px);
+  background: repeating-linear-gradient(-45deg, #f0efee 0px, #f0efee 2px, white 3px, white 8px, #f0efee 9px);
   margin-bottom: 1.5rem;
   margin-top: 1rem;
 }
@@ -877,7 +939,7 @@ footer p {
   font-size: 3.5em;
   text-align: center;
   margin-bottom: 0;
-  margin-bottom: .2em;
+  margin-bottom: 0.2em;
 }
 
 .piece main article h2 {
@@ -890,13 +952,18 @@ footer p {
 }
 
 .piece main article section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: baseline;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   margin-bottom: 1.25rem;
 }
 
 .piece main article h3 {
-  flex-basis: 25%;
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
   text-align: right;
   margin: 0;
   padding: 0;
@@ -905,7 +972,8 @@ footer p {
 }
 
 .piece main article p {
-  flex-basis: 75%;
+  -ms-flex-preferred-size: 75%;
+      flex-basis: 75%;
   text-align: left;
   margin: 0;
   padding: 0;
@@ -913,21 +981,28 @@ footer p {
 
 .piece main article figure {
   float: none;
-  margin: .5rem auto;
+  margin: 0.5rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 100%;
   max-width: 100%;
 }
 
 .piece main article figure .featpic {
-  flex-basis: 65%;
-  margin: .5rem auto;
+  -ms-flex-preferred-size: 65%;
+      flex-basis: 65%;
+  margin: 0.5rem auto;
   margin-right: 2rem;
 }
 
 .piece main article figure .sidepic {
-  flex-basis: 35%;
+  -ms-flex-preferred-size: 35%;
+      flex-basis: 35%;
   padding-top: 1rem;
 }
 
@@ -947,7 +1022,7 @@ footer p {
   max-width: 150px;
   height: auto;
   display: inline-block;
-  margin: .2rem;
+  margin: 0.2rem;
 }
 
 .piece main article figure img {
@@ -955,7 +1030,8 @@ footer p {
 }
 
 .piece main article.single figure .featpic {
-  flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
 }
 
 .piece main nav {
@@ -972,7 +1048,8 @@ footer p {
   background: #e3e2e0;
 }
 
-.piece .lSSlideOuter .lSPager.lSpg > li:hover a, .piece .lSSlideOuter .lSPager.lSpg > li.active a {
+.piece .lSSlideOuter .lSPager.lSpg > li:hover a,
+.piece .lSSlideOuter .lSPager.lSpg > li.active a {
   background: #96d673;
 }
 
@@ -988,7 +1065,7 @@ footer p {
   width: 100%;
   height: auto;
   padding: 5px;
-  border: 2px solid #F0EFEE;
+  border: 2px solid #f0efee;
 }
 
 #lightSlider li span {
@@ -1001,10 +1078,11 @@ footer p {
   color: white;
   background: rgba(75, 163, 156, 0.8);
   text-shadow: 1px 1px 1px #287670;
-  font-size: .7rem;
+  font-size: 0.7rem;
   font-family: "Roboto Slab", Georgia, serif;
   text-align: center;
   padding: 10px;
+  -webkit-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
   opacity: 0;
 }
@@ -1022,7 +1100,10 @@ footer p {
     margin: 0 auto;
   }
   .piece main article figure {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     text-align: center;
   }
   .piece main article figure .featpic {
@@ -1039,7 +1120,7 @@ footer p {
     text-align: center;
     display: block;
     margin: 0;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
   .piece main article section p {
     display: block;
@@ -1047,3 +1128,4 @@ footer p {
     margin-bottom: 1rem;
   }
 }
+/*# sourceMappingURL=tesori.css.map */
